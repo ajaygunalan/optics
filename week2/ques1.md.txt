@@ -1,0 +1,13 @@
+Design goal
+Design a 20 mm diameter singlet lens for visible light made from Schott N-BK7 glass that operates at f number 5 (written f/5). The lens should operate with an angular field of view of up to ±4 degrees from the optic axis.
+
+Initial Calculations
+Before we jump into OpticStudio, let's do a few calculations.
+
+What is the required focal length (in mm) of the lens described above? Hint: Look up “f-number” on Wikipedia. 
+
+What is the refractive index of the N-BK7 glass from the Schott corporation at the optical wavelength of 588 nm, which is called the “sodium D line."  Enter the number to at least 4 decimal points. Hint: The OpticStudio Glass Report function of the Materials Catalog is a simple way to find this.
+
+For a plano-convex lens, what is the surface radius of curvature (in mm) required to yield the desired focal length?  Hint: Look up the “Lens” entry of Wikipedia to understand the terminology for a “plano-convex” lens.  Read about the “Lensmaker’s equation,” found on the same page,  or go to the lecture later in this course entitled “Lens Maker’s Equation.”  In this equation, let R be the curved side and R be infinite (that is, side two is flat or “plano.”)   
+
+Once you have the numbers above, you're ready to get started using OpticStudio. Move on to the next reading for the next steps. 
