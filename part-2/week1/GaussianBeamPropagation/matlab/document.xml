@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:pPr><w:pStyle w:val="title"/><w:jc w:val="left"/></w:pPr><w:r><w:t>Gaussian Beam Propagation</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="text"/><w:jc w:val="left"/></w:pPr><w:r><w:t>Use the controls below to adjust the parameters and view the resulting plot:</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="text"/><w:jc w:val="left"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>         Gaussian Beam 1/e^2 radius                             Gaussian Beam Position</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="code"/></w:pPr><w:r><w:t><![CDATA[w0 =16;      x0 =10;]]></w:t></w:r><mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice Requires="R2018a"><w:customXml w:element="livecontrol"><w:customXmlPr><w:attr w:name="context" w:val="{&quot;type&quot;:&quot;slider&quot;,&quot;data&quot;:{&quot;minimum&quot;:0,&quot;maximum&quot;:60,&quot;value&quot;:16,&quot;step&quot;:2}}"/><w:attr w:name="text" w:val="16"/><w:attr w:name="startOffsetLine" w:val="0"/><w:attr w:name="startColumn" w:val="4"/><w:attr w:name="endOffsetLine" w:val="0"/><w:attr w:name="endColumn" w:val="6"/></w:customXmlPr></w:customXml></mc:Choice><mc:Fallback/></mc:AlternateContent><mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice Requires="R2018a"><w:customXml w:element="livecontrol"><w:customXmlPr><w:attr w:name="context" w:val="{&quot;type&quot;:&quot;slider&quot;,&quot;data&quot;:{&quot;minimum&quot;:-100,&quot;maximum&quot;:100,&quot;value&quot;:10,&quot;step&quot;:5}}"/><w:attr w:name="text" w:val="10"/><w:attr w:name="startOffsetLine" w:val="0"/><w:attr w:name="startColumn" w:val="17"/><w:attr w:name="endOffsetLine" w:val="0"/><w:attr w:name="endColumn" w:val="19"/></w:customXmlPr></w:customXml></mc:Choice><mc:Fallback/></mc:AlternateContent></w:p><w:p><w:pPr><w:pStyle w:val="text"/><w:jc w:val="left"/></w:pPr><w:r><w:rPr><w:b/></w:rPr><w:t>                Lens Focal Length                                             Lens Position</w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="code"/></w:pPr><w:r><w:t><![CDATA[f =800;     Lenz_z =2700; ]]></w:t></w:r><mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice Requires="R2018a"><w:customXml w:element="livecontrol"><w:customXmlPr><w:attr w:name="context" w:val="{&quot;type&quot;:&quot;slider&quot;,&quot;data&quot;:{&quot;minimum&quot;:200,&quot;maximum&quot;:2200,&quot;value&quot;:800,&quot;step&quot;:50}}"/><w:attr w:name="text" w:val="800"/><w:attr w:name="startOffsetLine" w:val="0"/><w:attr w:name="startColumn" w:val="3"/><w:attr w:name="endOffsetLine" w:val="0"/><w:attr w:name="endColumn" w:val="6"/></w:customXmlPr></w:customXml></mc:Choice><mc:Fallback/></mc:AlternateContent><mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"><mc:Choice Requires="R2018a"><w:customXml w:element="livecontrol"><w:customXmlPr><w:attr w:name="context" w:val="{&quot;type&quot;:&quot;slider&quot;,&quot;data&quot;:{&quot;minimum&quot;:0,&quot;maximum&quot;:5000,&quot;value&quot;:2700,&quot;step&quot;:100}}"/><w:attr w:name="text" w:val="2700"/><w:attr w:name="startOffsetLine" w:val="0"/><w:attr w:name="startColumn" w:val="20"/><w:attr w:name="endOffsetLine" w:val="0"/><w:attr w:name="endColumn" w:val="24"/></w:customXmlPr></w:customXml></mc:Choice><mc:Fallback/></mc:AlternateContent></w:p><w:p><w:pPr><w:pStyle w:val="text"/><w:jc w:val="left"/></w:pPr><w:r><w:t>The surface plot below shows the intensity profile of a Gaussian beam, beginning at the beam waist, as it propagates through a lens. All distances are in units of one wavelength. </w:t></w:r></w:p><w:p><w:pPr><w:pStyle w:val="code"/></w:pPr><w:r><w:t><![CDATA[makePlot(w0,f,Lenz_z,x0);]]></w:t></w:r></w:p><w:p><w:pPr><w:sectPr/></w:pPr></w:p><w:p><w:pPr><w:pStyle w:val="code"/></w:pPr><w:r><w:t><![CDATA[function [I,z,x] = makePlot(w0, f, Lens_z,x0)       
+    % Define grid and space
+    L = 1;                      % wavelength of light 
+    n = 1.0;                    % index of air
+    k = 2*pi*n/L;               % wave number in material
+    Nx = 1024;                  % number of x cells
+    dx = L/2;                   % length of x cells
+    Lx = Nx*dx;                 % length of grid in x
+    dkx = (2*pi)/Lx;            % length of kx cell
+    Nkx = Nx;                   % same number of cells in real and fourier space
+    x = dx.*(-(Nx/2):Nx/2-1);
+    kx = dkx.*(-(Nkx/2):Nkx/2-1);
+    kz = sqrt(k^2-kx.^2); 
+    
+    dz = 10;                            % steps in z
+    zmax = 6000;                        % end of grid in z
+    z = 0:dz:zmax;                      % z grid
+    
+    % Define Gaussian beam at waist. 
+    E = exp(-((x-x0)./w0).^2);             % initial transverse electric field
+    Tf = exp(1i.*k.*(x.^2)/(2*f));                   % transmission function for the thin lens
+    
+    % Propagate beam
+    FE(1,:)= E ;
+    for d = 1:length(z)
+        FE(d+1,:)=ifft(ifftshift(fftshift(fft(FE(d,:))).*exp(-1i.*kz.*dz)));
+        if abs(z(d)- Lens_z) < dz/2        
+            FE(d+1,:)=FE(d+1,:).*Tf;
+        end
+    end  
+    I = abs(FE).^2;                     % intensity of field at every point in x and z
+           
+    imagesc(z,x,I(1:length(z),1:length(x))');
+    line([Lens_z Lens_z], [min(x) max(x)], 'Color', 'yellow','Linewidth', 3);
+    line([Lens_z-f Lens_z-f], [min(x) max(x)], ...
+        'Color', 'green','Linestyle', ':','Linewidth', 3);
+    line([Lens_z+f Lens_z+f], [min(x) max(x)], ...
+        'Color', 'green','Linestyle', ':','Linewidth', 3);
+    text(Lens_z+30, (max(x)-min(x))/4,'Lens','Color', 'yellow');
+    text(Lens_z+f+30, (max(x)-min(x))/4,'Focal Plane','Color', 'green');
+    text(Lens_z-f-700, (max(x)-min(x))/4,'Focal Plane','Color', 'green');    
+    ylim([round(0.7*min(x)) round(0.7*max(x))]);
+    xlim([min(z) max(z)]);
+    colormap('jet')
+end]]></w:t></w:r></w:p></w:body></w:document>

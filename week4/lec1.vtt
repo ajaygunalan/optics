@@ -1,0 +1,589 @@
+WEBVTT
+
+1
+00:00:04.450 --> 00:00:07.295
+In the previous lectures,
+
+2
+00:00:07.295 --> 00:00:09.755
+we started with graphical ray tracing.
+
+3
+00:00:09.755 --> 00:00:12.545
+And by shooting the three principal rays,
+
+4
+00:00:12.545 --> 00:00:13.805
+one, two, and three,
+
+5
+00:00:13.805 --> 00:00:18.755
+we learned things like the system magnification and thin lens equations,
+
+6
+00:00:18.755 --> 00:00:22.250
+which told us something about image conditions, and magnifications,
+
+7
+00:00:22.250 --> 00:00:26.120
+and useful properties of a system.
+
+8
+00:00:26.120 --> 00:00:28.040
+When we went to Optic Studio,
+
+9
+00:00:28.040 --> 00:00:32.210
+we saw rays moving through potentially complex optical systems,
+
+10
+00:00:32.210 --> 00:00:34.130
+refracting at every surface.
+
+11
+00:00:34.130 --> 00:00:36.140
+And in that case,
+
+12
+00:00:36.140 --> 00:00:41.210
+those rays were really carrying information about the entire optical field,
+
+13
+00:00:41.210 --> 00:00:44.895
+its phase, and solving Maxwell's equations.
+
+14
+00:00:44.895 --> 00:00:46.490
+What we want to start doing now is,
+
+15
+00:00:46.490 --> 00:00:48.170
+filling in the gap between those,
+
+16
+00:00:48.170 --> 00:00:52.220
+moving from the simple graphical techniques towards
+
+17
+00:00:52.220 --> 00:00:57.525
+more sophisticated views of what a lens is and what it means to do ray tracing?
+
+18
+00:00:57.525 --> 00:00:59.470
+The first thing we need to do,
+
+19
+00:00:59.470 --> 00:01:05.840
+is actually calculate the optical path length of a lens.
+
+20
+00:01:05.840 --> 00:01:09.250
+That's a function that describes how
+
+21
+00:01:09.250 --> 00:01:13.745
+the lens transforms the phase fronts that are incident on it.
+
+22
+00:01:13.745 --> 00:01:15.640
+And remember, optical path length,
+
+23
+00:01:15.640 --> 00:01:19.105
+which we derived or defined before, is simply, N times L,
+
+24
+00:01:19.105 --> 00:01:24.398
+or more formally, the integral of N along the ray,
+
+25
+00:01:24.398 --> 00:01:29.225
+and that tells us something about the phase that's accumulated along the ray.
+
+26
+00:01:29.225 --> 00:01:33.955
+Now, we could do that through a lot of techniques but the technique which is
+
+27
+00:01:33.955 --> 00:01:38.245
+really convenient for doing this calculation is Fermat's principle.
+
+28
+00:01:38.245 --> 00:01:41.500
+And this is an example of where knowing these deeper laws,
+
+29
+00:01:41.500 --> 00:01:44.260
+like Fermat's principle, allows you to do things very,
+
+30
+00:01:44.260 --> 00:01:46.380
+very simply and quickly.
+
+31
+00:01:46.380 --> 00:01:47.560
+So, what we are going to do is,
+
+32
+00:01:47.560 --> 00:01:52.985
+we are going to imagine launching some light off of an object in multiple directions.
+
+33
+00:01:52.985 --> 00:01:56.445
+It goes through a lens and converges back to an image.
+
+34
+00:01:56.445 --> 00:02:01.540
+Fermat's principle states that no matter what direction we shoot the ray,
+
+35
+00:02:01.540 --> 00:02:04.690
+by the time they all get back to the image,
+
+36
+00:02:04.690 --> 00:02:08.770
+the total optical path length, or transit time,
+
+37
+00:02:08.770 --> 00:02:11.610
+should be invariant to the ray direction,
+
+38
+00:02:11.610 --> 00:02:15.750
+it should be stationary using the language of mathematics.
+
+39
+00:02:15.750 --> 00:02:18.005
+And this kind of makes physical sense.
+
+40
+00:02:18.005 --> 00:02:22.780
+If you think about a set of waves converging toward the image here,
+
+41
+00:02:22.780 --> 00:02:24.575
+if they weren't all in phase,
+
+42
+00:02:24.575 --> 00:02:27.505
+we wouldn't have constructive interference at the image point,
+
+43
+00:02:27.505 --> 00:02:30.900
+and actually generate a converging spherical wave there,
+
+44
+00:02:30.900 --> 00:02:33.065
+so that's the physical interpretation of it.
+
+45
+00:02:33.065 --> 00:02:35.135
+The calculation is quite simple.
+
+46
+00:02:35.135 --> 00:02:36.430
+On the left hand side,
+
+47
+00:02:36.430 --> 00:02:38.440
+we're going to simply calculate
+
+48
+00:02:38.440 --> 00:02:42.250
+the optical path length of a ray that goes right down the axis, there's NT,
+
+49
+00:02:42.250 --> 00:02:43.310
+with the minus sign,
+
+50
+00:02:43.310 --> 00:02:44.526
+of course, because this is a minus distance,
+
+51
+00:02:44.526 --> 00:02:50.130
+negative distance, and then continues on to the image N prime T prime.
+
+52
+00:02:50.130 --> 00:02:55.420
+Now, I could have some thickness of the lens right there and that's just a constant,
+
+53
+00:02:55.420 --> 00:02:58.825
+constants don't matter because they don't change the shape of the wave front,
+
+54
+00:02:58.825 --> 00:03:00.990
+so I'm going to set that equal to zero.
+
+55
+00:03:00.990 --> 00:03:02.265
+I could have put a constant here,
+
+56
+00:03:02.265 --> 00:03:04.055
+wouldn't have made any difference.
+
+57
+00:03:04.055 --> 00:03:08.865
+I'm beginning to set that optical path length equal to a ray,
+
+58
+00:03:08.865 --> 00:03:13.520
+to that of a ray that goes up to some arbitrary distance R and back down.
+
+59
+00:03:13.520 --> 00:03:18.365
+So I calculate new distances based on that hypotenuse of that triangle,
+
+60
+00:03:18.365 --> 00:03:20.945
+the same thing over on the right hand side.
+
+61
+00:03:20.945 --> 00:03:24.170
+And now, I add in a correction factor.
+
+62
+00:03:24.170 --> 00:03:27.895
+This must be what the lens does, what extra phase,
+
+63
+00:03:27.895 --> 00:03:32.930
+what extra optical path length it adds in order to make this condition true,
+
+64
+00:03:32.930 --> 00:03:35.560
+in order to make Fermat's principal happen.
+
+65
+00:03:35.560 --> 00:03:39.285
+Because we're going to be paraxial here,
+
+66
+00:03:39.285 --> 00:03:42.770
+or first order design as in the name of the course,
+
+67
+00:03:42.770 --> 00:03:45.740
+we are going to take these angles to be sufficiently
+
+68
+00:03:45.740 --> 00:03:50.610
+small that we can take sine theta and tan theta equal to theta.
+
+69
+00:03:50.610 --> 00:03:56.075
+Snell's law simplifies N theta equals N theta,
+
+70
+00:03:56.075 --> 00:04:00.110
+and in the case of these square root functions here,
+
+71
+00:04:00.110 --> 00:04:04.560
+we'll take the binomial approximation and just keep the first term.
+
+72
+00:04:04.560 --> 00:04:10.900
+So, that's all the same approximation at the small angle paraxial approximation.
+
+73
+00:04:10.900 --> 00:04:13.543
+So, when we do that, we get terms will cancel out,
+
+74
+00:04:13.543 --> 00:04:16.490
+you see the NT here and the N prime T prime,
+
+75
+00:04:16.490 --> 00:04:20.155
+and so we can solve for the optical path length of the lens.
+
+76
+00:04:20.155 --> 00:04:24.185
+Of course, it's quadratic because that's all we kept here.
+
+77
+00:04:24.185 --> 00:04:27.090
+Wasn't really, doesn't really matter what the shape of the lens was,
+
+78
+00:04:27.090 --> 00:04:30.665
+we're only retaining the quadratic terms so, unsurprisingly,
+
+79
+00:04:30.665 --> 00:04:35.140
+we find a quadratic form for the optical path length.
+
+80
+00:04:35.140 --> 00:04:37.860
+The interesting bit is what's in parentheses here,
+
+81
+00:04:37.860 --> 00:04:39.205
+because this is an old friend.
+
+82
+00:04:39.205 --> 00:04:42.895
+That looks like the Gaussian thin lens equation, which we already know,
+
+83
+00:04:42.895 --> 00:04:47.405
+so we can replace the bit in parentheses with one over the focal length.
+
+84
+00:04:47.405 --> 00:04:54.345
+So, the optical path length of a paraxial thin lens is minus R squared over 2f.
+
+85
+00:04:54.345 --> 00:04:55.715
+That's an important expression,
+
+86
+00:04:55.715 --> 00:04:57.353
+we're going to use that a lot.
+
+87
+00:04:57.353 --> 00:05:00.880
+Let's pause for a minute and make sure this makes sense.
+
+88
+00:05:00.880 --> 00:05:05.005
+Remember, I said I dropped an arbitrary constant right in the axis here,
+
+89
+00:05:05.005 --> 00:05:06.685
+the term that we left out here,
+
+90
+00:05:06.685 --> 00:05:09.400
+so I can put any constant I want in here.
+
+91
+00:05:09.400 --> 00:05:11.835
+Constant optical path lengths aren't interesting,
+
+92
+00:05:11.835 --> 00:05:13.510
+it's only their shape that matters.
+
+93
+00:05:13.510 --> 00:05:14.965
+So, let me imagine, I put just S 0,
+
+94
+00:05:14.965 --> 00:05:16.465
+some constant in here,
+
+95
+00:05:16.465 --> 00:05:22.850
+that would represent the optical path length N times L at the center of the lens.
+
+96
+00:05:22.850 --> 00:05:26.275
+For positive focal length lens, F,
+
+97
+00:05:26.275 --> 00:05:30.585
+then we see that quadratically going away from the axis,
+
+98
+00:05:30.585 --> 00:05:32.295
+the lens gets thinner.
+
+99
+00:05:32.295 --> 00:05:35.460
+The optical path length decreases.
+
+100
+00:05:35.460 --> 00:05:38.690
+That makes sense, that's what a lens should do.
+
+101
+00:05:38.690 --> 00:05:40.740
+If, of course, the focal length was negative,
+
+102
+00:05:40.740 --> 00:05:42.035
+the opposite would occur,
+
+103
+00:05:42.035 --> 00:05:45.790
+and it would get thicker going away from the origin,
+
+104
+00:05:45.790 --> 00:05:50.359
+and it does that proportional to 1 over F. So,
+
+105
+00:05:50.359 --> 00:05:52.930
+the quantity 1 over F is powerful enough,
+
+106
+00:05:52.930 --> 00:05:56.085
+is important enough that we need a name for it, we're going to use this a lot.
+
+107
+00:05:56.085 --> 00:05:57.675
+We call it the power.
+
+108
+00:05:57.675 --> 00:05:59.790
+It's just a convenient variable.
+
+109
+00:05:59.790 --> 00:06:01.695
+It's got units of one over meters,
+
+110
+00:06:01.695 --> 00:06:03.128
+and that's useful enough,
+
+111
+00:06:03.128 --> 00:06:05.940
+we give it its own name, in optics, called diopters.
+
+112
+00:06:05.940 --> 00:06:07.330
+And if you have eyeglasses,
+
+113
+00:06:07.330 --> 00:06:08.750
+you've heard of diopters.
+
+114
+00:06:08.750 --> 00:06:13.180
+One diopter of correction is a relatively weak correction, for example.
+
+115
+00:06:13.180 --> 00:06:15.750
+So, a powerful lens,
+
+116
+00:06:15.750 --> 00:06:17.665
+a large number here,
+
+117
+00:06:17.665 --> 00:06:20.410
+that meaning a short focal length,
+
+118
+00:06:20.410 --> 00:06:25.880
+would mean that the change of the optical path length with radius was vast.
+
+119
+00:06:25.880 --> 00:06:29.230
+Powerful lenses are very curved,
+
+120
+00:06:29.230 --> 00:06:31.980
+weak lenses, small power,
+
+121
+00:06:31.980 --> 00:06:34.900
+few diopters, a one-diopter eyeglass lens,
+
+122
+00:06:34.900 --> 00:06:39.950
+for example, are relatively shallow in their curvature.
+
+123
+00:06:39.950 --> 00:06:43.115
+So, powerful lenses are lots of curvature,
+
+124
+00:06:43.115 --> 00:06:46.977
+weak lenses are little curvature.
+
+125
+00:06:46.977 --> 00:06:49.655
+That power concept is useful in lots of ways,
+
+126
+00:06:49.655 --> 00:06:51.340
+but here's the first one.
+
+127
+00:06:51.340 --> 00:06:54.610
+We can restate our Gaussian thin lens equation by
+
+128
+00:06:54.610 --> 00:06:58.754
+replacing 1 over F with this power, Phi,
+
+129
+00:06:58.754 --> 00:07:02.140
+and we can now interpret that as
+
+130
+00:07:02.140 --> 00:07:06.930
+a transformation of the radius of curvature of the lens because of the wavefront.
+
+131
+00:07:06.930 --> 00:07:10.100
+Here, we have a radiating spherical wave and at the lens,
+
+132
+00:07:10.100 --> 00:07:13.900
+it would have a radius of curvature equal to T. It gets
+
+133
+00:07:13.900 --> 00:07:19.315
+transformed into a converging spherical wave with radius of curvature T prime.
+
+134
+00:07:19.315 --> 00:07:20.980
+What this equation tells us,
+
+135
+00:07:20.980 --> 00:07:23.845
+a different way of thinking about the Gaussian thin lens equation,
+
+136
+00:07:23.845 --> 00:07:27.280
+is that the lens simply adds power,
+
+137
+00:07:27.280 --> 00:07:28.687
+in the case of a positive lens,
+
+138
+00:07:28.687 --> 00:07:31.420
+that transforms this radius of curvature,
+
+139
+00:07:31.420 --> 00:07:33.520
+which would be negative in our sign convention,
+
+140
+00:07:33.520 --> 00:07:36.810
+to this radius of curvature, which would be positive.
+
+141
+00:07:36.810 --> 00:07:40.270
+If, for example, the object is just at the focal length,
+
+142
+00:07:40.270 --> 00:07:42.160
+such that the radius of curvature of
+
+143
+00:07:42.160 --> 00:07:46.131
+the emerging spherical wave is equal to the power of the lens,
+
+144
+00:07:46.131 --> 00:07:49.045
+then we get an infinite radius of curvature,
+
+145
+00:07:49.045 --> 00:07:52.820
+which is consistent with having the object at the front focal plane.
+
+146
+00:07:52.820 --> 00:07:57.280
+This is a slightly more sophisticated way to think about what lenses do,
+
+147
+00:07:57.280 --> 00:08:00.870
+they transform radii of curvature.

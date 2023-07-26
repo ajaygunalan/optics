@@ -1,0 +1,47 @@
+In our last class we traced rays
+through optical systems, and learned rules using first-order design
+principles for how those rays would move, and eventually, say,
+converged at the focus of a lens. There's clearly something
+we did wrong there, and the focus of this second class
+is to fix this mistake we made. In particular,
+we had ray traces that looked like this, where all of the light came to
+a focus of infinitely small size. And that must have some problem,
+because if you did that, you'd create your own Big Bang, and though exciting,
+is generally a poor design principle. So we must have done something wrong,
+and the thing that we're going to learn in this class is that we need to
+think about more than single rays. We actually have to look at
+the ensemble of rays, and think about the fact
+that light has a shape. And the core of this course is really
+understanding the shape of light, as it moves through optical systems. And this will limit the ability to focus
+light to an infinitely small point, so it's going to give us resolution in things
+like imaging or lithography systems. And it's also very important in
+understanding how you get light off of, let's say, a lightbulb, in through
+a system, and how much light you can get, how bright it can be. It turns out, we weren't completely wrong,
+there was just a region of space where these solutions that we
+derived in the last class are incorrect. And we can understand that by
+remembering that we derived rays from an equation called the Eikonal,
+from Maxwell's equations, but we made one critical assumption as
+we went through that derivation. And that was that the amplitude
+of the light was slowly varying, the derivative of the amplitude
+of e with space was slow. And that's generally true in
+the middle of our optical systems, or outside of our optical systems. But at the edges where we're going from
+this kind of designs, from no intensity to lots, to a step function at this edges,
+clearly that assumption is violated. So the first thing to remember is
+that in the kind of derivations and ray traces that we did last time, the
+edges of all of them are a bit suspect. And of course all those edges
+all come together at that focus, where we noted momentarily ago that
+we had infinite energy density. That explains that our solution
+using rays is invalid at that spot, and so we need to fix that. And another example of that is,
+instead of having a little point radiator, an incoherent source like a little
+screaming electron on a hot body, what if instead we had
+something like a laser beam? This is a finite sized coherent object,
+and that's going to launch a set of rays, or a set of fields, that are not coming
+from an infinitesimally small point. And it turns out in that case, pretty much the entire solution that
+we have going through this rays can be, if not wrong, at least not perfectly
+correct and we're going to fix that. So this is a very common sort of thing
+when you are imaging laser beams, or optical fibers, or
+maybe we have small coherent sources, which is a very common and
+important optical problem. So we need to understand how
+to deal with systems now, where we think about the shape of the
+laser beam, or the shape of the optics, and deal with this problem that our edges
+in our previous solutions were incorrect.

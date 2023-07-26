@@ -1,0 +1,11 @@
+Start by drawing the 20X objective lens with a 160 mm tube length (focal length of 8 mm as calculated previously). Place the object at a distance of approximately 8.4 mm from the objective lens, as previously calculated to achieve 20X magnification.
+
+The objective lens will create an intermediate image at a distance of 160 mm from the lens. This is where the eyepiece will be placed.
+
+The eyepiece will produce an additional 1.5X magnification. You may assume that the eyepiece is a single lens system, but in reality, it is a more complex multi-lens system. For simplicity, let's assume the eyepiece has a focal length of 10 mm.
+
+Place the eyepiece at a distance equal to its focal length (10 mm) from the intermediate image created by the objective lens. This will create a virtual image at infinity for the eye to view comfortably.
+
+Graphically trace rays through the system. Start by drawing a set of parallel rays (object rays) originating from the object and entering the objective lens. These rays will converge to a single point at the intermediate image plane.
+
+Now, draw another set of parallel rays (eye rays) originating from the intermediate image plane and entering the eyepiece lens. These rays will be refracted by the eyepiece and emerge as parallel rays (since the final image is at infinity), but with an increased angle to the optical axis, indicating a larger virtual image.

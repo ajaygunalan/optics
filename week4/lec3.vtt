@@ -1,0 +1,477 @@
+WEBVTT
+
+1
+00:00:04.670 --> 00:00:12.640
+Now, that we have an expression for how a single curved surface reflects light,
+
+2
+00:00:12.640 --> 00:00:15.390
+we can relate the radii of curvature of that surface,
+
+3
+00:00:15.390 --> 00:00:19.732
+and the two effective indices to a one's power, or focal length.
+
+4
+00:00:19.732 --> 00:00:22.765
+Of course, we'd like to have lenses with two sides.
+
+5
+00:00:22.765 --> 00:00:25.175
+So we'd like two surfaces.
+
+6
+00:00:25.175 --> 00:00:28.660
+So now let's work out what you do,
+
+7
+00:00:28.660 --> 00:00:32.695
+when you have two optical elements in the path.
+
+8
+00:00:32.695 --> 00:00:37.225
+The first thing to do is to back up two or thin per axial approximation,
+
+9
+00:00:37.225 --> 00:00:39.175
+and see what that tells us.
+
+10
+00:00:39.175 --> 00:00:42.110
+So here we have our traditional imaging problem.
+
+11
+00:00:42.110 --> 00:00:43.215
+But now let's imagine,
+
+12
+00:00:43.215 --> 00:00:44.665
+that instead of a single ends,
+
+13
+00:00:44.665 --> 00:00:49.315
+we've contacted two lenses of power V-1 and V-2,
+
+14
+00:00:49.315 --> 00:00:52.990
+and they're thin, so they can be in intimate contact.
+
+15
+00:00:52.990 --> 00:00:54.850
+Presumably, they should operate like
+
+16
+00:00:54.850 --> 00:00:59.285
+some equivalent single lens of some equivalent focal length.
+
+17
+00:00:59.285 --> 00:01:01.795
+The question is what is that focal length?
+
+18
+00:01:01.795 --> 00:01:05.315
+So, once again, optical path length is the way to solve this problem.
+
+19
+00:01:05.315 --> 00:01:08.290
+And remember, optical path length is just an integration along
+
+20
+00:01:08.290 --> 00:01:13.495
+the ray path of the index refraction times the distance along the path.
+
+21
+00:01:13.495 --> 00:01:18.155
+And the paraxial version of that expression is simply integration in Z.
+
+22
+00:01:18.155 --> 00:01:21.565
+So in other words, if we know the optical path length of these two lenses,
+
+23
+00:01:21.565 --> 00:01:25.670
+then the sum is what the effective ones would look like.
+
+24
+00:01:25.670 --> 00:01:30.005
+We reasonably, add the optical path length of the two lenses.
+
+25
+00:01:30.005 --> 00:01:31.715
+So that's a super simple calculation.
+
+26
+00:01:31.715 --> 00:01:35.000
+We just add the two optical path lengths.
+
+27
+00:01:35.000 --> 00:01:37.535
+If we see one over F-1, and one over F-2 here,
+
+28
+00:01:37.535 --> 00:01:39.650
+of course, we can factor that out.
+
+29
+00:01:39.650 --> 00:01:43.915
+This expression looks just like the original expression.
+
+30
+00:01:43.915 --> 00:01:47.350
+So quite simply, one over the focal length of
+
+31
+00:01:47.350 --> 00:01:52.394
+the combined lenses is one over F-1 plus one over F-2.
+
+32
+00:01:52.394 --> 00:01:55.345
+And if we turn those all into powers by inverting them,
+
+33
+00:01:55.345 --> 00:01:59.110
+and this is probably the primary motivation for using optical power,
+
+34
+00:01:59.110 --> 00:02:01.131
+we see that powers add.
+
+35
+00:02:01.131 --> 00:02:03.295
+Pause the video here for a moment,
+
+36
+00:02:03.295 --> 00:02:05.250
+and think about the following question.
+
+37
+00:02:05.250 --> 00:02:06.955
+If you're in the lab, and you have
+
+38
+00:02:06.955 --> 00:02:10.760
+two 50 millimeter lenses and you put them back to back,
+
+39
+00:02:10.760 --> 00:02:14.965
+what's the focal length then of the pair of lenses?
+
+40
+00:02:14.965 --> 00:02:18.540
+Put them in mid contact.
+
+41
+00:02:18.540 --> 00:02:22.275
+The answer to that, if you've thought about it, is 25 millimeters.
+
+42
+00:02:22.275 --> 00:02:24.015
+Because one over 50,
+
+43
+00:02:24.015 --> 00:02:27.380
+plus one over 50, must equal one over 25.
+
+44
+00:02:27.380 --> 00:02:29.831
+So that's again, why you have to think in powers,
+
+45
+00:02:29.831 --> 00:02:31.724
+powers are the things that had linearly,
+
+46
+00:02:31.724 --> 00:02:34.280
+and that trick by the way is something you often do in the lab.
+
+47
+00:02:34.280 --> 00:02:35.906
+You don't have all lenses you need,
+
+48
+00:02:35.906 --> 00:02:38.070
+you can roughly paraxially,
+
+49
+00:02:38.070 --> 00:02:39.420
+synthesize what you need,
+
+50
+00:02:39.420 --> 00:02:41.880
+by stacking up other lenses of
+
+51
+00:02:41.880 --> 00:02:46.910
+longer total focal length that always will shorten for positive lenses course.
+
+52
+00:02:46.910 --> 00:02:51.705
+Okay. Now we're ready to do something they would say is real.
+
+53
+00:02:51.705 --> 00:02:54.445
+If we have a lens,
+
+54
+00:02:54.445 --> 00:02:57.063
+let's put it in vacuum to start out,
+
+55
+00:02:57.063 --> 00:02:59.245
+to make life simple, so indexing one.
+
+56
+00:02:59.245 --> 00:03:02.025
+It has a glass of a particular refractive index,
+
+57
+00:03:02.025 --> 00:03:06.660
+and it's bound by two radii of curvature, R-1 and R-2.
+
+58
+00:03:06.660 --> 00:03:10.735
+We will first simplify that to our equivalent thin lens system.
+
+59
+00:03:10.735 --> 00:03:13.890
+We're not going to worry about these surfaces.
+
+60
+00:03:13.890 --> 00:03:18.050
+We actually hit them at odd positions of the axis.
+
+61
+00:03:18.050 --> 00:03:21.745
+So we'll make that an equivalent thin lens system.
+
+62
+00:03:21.745 --> 00:03:26.925
+And so that's V-1 and V-2 whatever those are, index or reflection.
+
+63
+00:03:26.925 --> 00:03:34.555
+And in middle separated by some distance D. So here's the expression we have from before.
+
+64
+00:03:34.555 --> 00:03:38.575
+The power of that equivalent two lens system,
+
+65
+00:03:38.575 --> 00:03:41.815
+if the lenses were in intimate contact D equals zero,
+
+66
+00:03:41.815 --> 00:03:43.670
+is V-1 plus V-2.
+
+67
+00:03:43.670 --> 00:03:45.415
+It turns out that the correction to that,
+
+68
+00:03:45.415 --> 00:03:47.650
+and there's a finite distance is this term here,
+
+69
+00:03:47.650 --> 00:03:52.090
+we don't quite have the tools yet to derive that in a convenient way.
+
+70
+00:03:52.090 --> 00:03:53.885
+So please just accept it right now.
+
+71
+00:03:53.885 --> 00:03:56.495
+We'll come back and fix that fairly quickly.
+
+72
+00:03:56.495 --> 00:04:00.190
+So this is the expression for what's the power of a two lens system.
+
+73
+00:04:00.190 --> 00:04:01.576
+This two lens system,
+
+74
+00:04:01.576 --> 00:04:05.195
+when there's a finite distance D, between the two lenses.
+
+75
+00:04:05.195 --> 00:04:07.000
+So if you'll believe that for a moment,
+
+76
+00:04:07.000 --> 00:04:08.950
+then we know the power of,
+
+77
+00:04:08.950 --> 00:04:13.360
+equivalent power thin lens surfaces for single pieces of glass,
+
+78
+00:04:13.360 --> 00:04:16.300
+so we can substitute V-1 and V-2 throughout,
+
+79
+00:04:16.300 --> 00:04:18.370
+and we get this expression here,
+
+80
+00:04:18.370 --> 00:04:20.725
+which is called the Lens maker's equation,
+
+81
+00:04:20.725 --> 00:04:25.010
+and it's actually the place you start when you were designing real lenses.
+
+82
+00:04:25.010 --> 00:04:27.246
+If you want a particular power V,
+
+83
+00:04:27.246 --> 00:04:29.176
+you had a particular index N,
+
+84
+00:04:29.176 --> 00:04:32.240
+you see that you have two degrees of freedom here.
+
+85
+00:04:32.240 --> 00:04:34.660
+Well, sorry three degrees of freedom, C-1, C-2,
+
+86
+00:04:34.660 --> 00:04:38.915
+and D. That gives you the idea of where optics studio might come in,
+
+87
+00:04:38.915 --> 00:04:44.515
+or more sophisticated design techniques to choose what those three variables would be.
+
+88
+00:04:44.515 --> 00:04:48.285
+Because here you have one constraint on those three variants.
+
+89
+00:04:48.285 --> 00:04:50.763
+This is how you'd start to build real lenses.
+
+90
+00:04:50.763 --> 00:04:52.985
+If the lens is reasonably thin,
+
+91
+00:04:52.985 --> 00:04:55.690
+D is smaller than both the radii of curvature.
+
+92
+00:04:55.690 --> 00:04:57.115
+We can throw away this term,
+
+93
+00:04:57.115 --> 00:04:58.940
+and we get back to a simpler expression.
+
+94
+00:04:58.940 --> 00:05:02.200
+And now you see it's just the difference in the radii of curvature,
+
+95
+00:05:02.200 --> 00:05:04.175
+and the difference in their refractive indices.
+
+96
+00:05:04.175 --> 00:05:05.950
+If we didn't have vacuum here,
+
+97
+00:05:05.950 --> 00:05:08.190
+all of the one's here would turn
+
+98
+00:05:08.190 --> 00:05:11.540
+into the refractive index of the medium in which were a must.
+
+99
+00:05:11.540 --> 00:05:13.360
+So that equation is really important,
+
+100
+00:05:13.360 --> 00:05:16.015
+because it tells you how to build real lenses.
+
+101
+00:05:16.015 --> 00:05:19.720
+And it's also got this nugget in it that you were left with degrees of freedom,
+
+102
+00:05:19.720 --> 00:05:21.420
+radii of curvature, and distances.
+
+103
+00:05:21.420 --> 00:05:23.855
+These are your degrees of freedom, as a designer,
+
+104
+00:05:23.855 --> 00:05:25.495
+and this is now one constraint,
+
+105
+00:05:25.495 --> 00:05:30.165
+that gives you a paraxial power on this singlet lens.
+
+106
+00:05:30.165 --> 00:05:33.920
+Singlet lenses are so common that it's worth
+
+107
+00:05:33.920 --> 00:05:37.415
+giving all the different possible shapes names.
+
+108
+00:05:37.415 --> 00:05:42.570
+If both surfaces are convex, It's a Biconvex.
+
+109
+00:05:42.570 --> 00:05:47.670
+If one of the surfaces has an infinite radius of curvature, it's flat.
+
+110
+00:05:47.670 --> 00:05:52.465
+We call it a Plano-convex, or Plano-concave.
+
+111
+00:05:52.465 --> 00:05:57.383
+If both surfaces are curved with the same sign,
+
+112
+00:05:57.383 --> 00:06:00.295
+you see these are both positive radii of curvature,
+
+113
+00:06:00.295 --> 00:06:02.520
+then the lens is called a meniscus.
+
+114
+00:06:02.520 --> 00:06:04.230
+That's kind of like a physical object,
+
+115
+00:06:04.230 --> 00:06:06.530
+like a meniscus water or film.
+
+116
+00:06:06.530 --> 00:06:08.300
+And finally, correct the other end,
+
+117
+00:06:08.300 --> 00:06:10.475
+if both surfaces are concave,
+
+118
+00:06:10.475 --> 00:06:12.045
+and so Biconcave lens.
+
+119
+00:06:12.045 --> 00:06:15.120
+Those are just words that's useful to have.

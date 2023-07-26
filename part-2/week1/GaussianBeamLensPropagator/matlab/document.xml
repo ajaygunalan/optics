@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body><w:p><w:pPr><w:pStyle w:val="code"/></w:pPr><w:r><w:t><![CDATA[classdef GaussianBeamLensPropagator < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure                     matlab.ui.Figure
+        GaussianBeam1e2radiusSliderLabel  matlab.ui.control.Label
+        GaussianBeam1e2radiusSlider  matlab.ui.control.Slider
+        LensFocalLengthSliderLabel   matlab.ui.control.Label
+        LensFocalLengthSlider        matlab.ui.control.Slider
+        LensPositionSliderLabel      matlab.ui.control.Label
+        LensPositionSlider           matlab.ui.control.Slider
+        UIAxes                       matlab.ui.control.UIAxes
+        GaussianBeamPositionSliderLabel  matlab.ui.control.Label
+        GaussianBeamPositionSlider   matlab.ui.control.Slider
+        TextArea                     matlab.ui.control.TextArea
+    end
+
+
+    methods (Access = private)
+    
+        function [I,z,x] = func(app, w0, f, Lens_z,x0);
+            
+% Define grid and space
+L = 1;                      % wavelength of light 
+n = 1.0;                    % index of air
+k = 2*pi*n/L;               % wave number in material
+Nx = 1024;                  % number of x cells
+dx = L/2;                   % length of x cells
+Lx = Nx*dx;                 % length of grid in x
+dkx = (2*pi)/Lx;            % length of kx cell
+Nkx = Nx;                   % same number of cells in real and fourier space
+x = dx.*(-(Nx/2):Nx/2-1);
+kx = dkx.*(-(Nkx/2):Nkx/2-1);
+kz = sqrt(k^2-kx.^2); 
+
+dz = 10;                            % steps in z
+zmax = 6000;                        % end of grid in z
+z = 0:dz:zmax;                      % z grid
+
+% Define Gaussian beam at waist. 
+E = exp(-((x-x0)./w0).^2);             % initial transverse electric field
+Tf = exp(1i.*k.*(x.^2)/(2*f));                   % transmission function for the thin lens
+
+% Propagate beam
+FE(1,:)= E ;
+for d = 1:length(z)
+    FE(d+1,:)=ifft(ifftshift(fftshift(fft(FE(d,:))).*exp(-1i.*kz.*dz)));
+    if abs(z(d)- Lens_z) < dz/2        
+        FE(d+1,:)=FE(d+1,:).*Tf;
+    end
+end  
+       I = abs(FE).^2;                     % intensity of field at every point in x and z
+       
+imagesc(app.UIAxes,z,x,I(1:length(z),1:length(x))');
+line(app.UIAxes, [Lens_z Lens_z], [min(x) max(x)], 'Color', 'yellow','Linewidth', 3);
+line(app.UIAxes, [Lens_z-f Lens_z-f], [min(x) max(x)], ...
+    'Color', 'green','Linestyle', ':','Linewidth', 3);
+line(app.UIAxes, [Lens_z+f Lens_z+f], [min(x) max(x)], ...
+    'Color', 'green','Linestyle', ':','Linewidth', 3);
+text(app.UIAxes,Lens_z+30, (max(x)-min(x))/4,'Lens','Color', 'yellow');
+text(app.UIAxes,Lens_z+f+30, (max(x)-min(x))/4,'Focal Plane','Color', 'green');
+text(app.UIAxes,Lens_z-f-700, (max(x)-min(x))/4,'Focal Plane','Color', 'green');    
+app.UIAxes.YLim = [round(0.7*min(x)) round(0.7*max(x))];
+    app.UIAxes.XLim = [min(z) max(z)];
+    colormap(app.UIAxes, 'jet')
+        end
+        
+    end
+
+
+    methods (Access = private)
+
+        % Code that executes after component creation
+        function startupFcn(app)
+              
+            w0 = app.GaussianBeam1e2radiusSlider.Value;
+            f = app.LensFocalLengthSlider.Value;
+            Lens_z = app.LensPositionSlider.Value;
+            x0 = app.GaussianBeamPositionSlider.Value;
+
+            func(app, w0, f, Lens_z,x0);                   
+
+
+        end
+
+        % Value changed function: GaussianBeam1e2radiusSlider
+        function GaussianBeam1e2radiusSliderValueChanged(app, event)
+            
+            w0 = app.GaussianBeam1e2radiusSlider.Value;
+            f = app.LensFocalLengthSlider.Value;
+            Lens_z = app.LensPositionSlider.Value;
+            x0 = app.GaussianBeamPositionSlider.Value;
+
+            func(app, w0, f, Lens_z,x0);                   
+
+
+ 
+        end
+
+        % Value changed function: LensFocalLengthSlider
+        function LensFocalLengthSliderValueChanged(app, event)
+                
+            
+            w0 = app.GaussianBeam1e2radiusSlider.Value;
+            f = app.LensFocalLengthSlider.Value;
+            Lens_z = app.LensPositionSlider.Value;
+            x0 = app.GaussianBeamPositionSlider.Value;
+
+            func(app, w0, f, Lens_z,x0);                   
+
+
+        end
+
+        % Value changed function: LensPositionSlider
+        function LensPositionSliderValueChanged(app, event)
+                
+            
+            w0 = app.GaussianBeam1e2radiusSlider.Value;
+            f = app.LensFocalLengthSlider.Value;
+            Lens_z = app.LensPositionSlider.Value;
+            x0 = app.GaussianBeamPositionSlider.Value;
+
+            func(app, w0, f, Lens_z,x0);                   
+
+
+            
+        end
+
+        % Value changed function: GaussianBeamPositionSlider
+        function GaussianBeamPositionSliderValueChanged(app, event)
+               
+            
+            w0 = app.GaussianBeam1e2radiusSlider.Value;
+            f = app.LensFocalLengthSlider.Value;
+            Lens_z = app.LensPositionSlider.Value;
+            x0 = app.GaussianBeamPositionSlider.Value;
+
+            func(app, w0, f, Lens_z,x0);                   
+
+
+        end
+    end
+
+    % App initialization and construction
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure
+            app.UIFigure = uifigure;
+            app.UIFigure.Position = [100 100 753 463];
+            app.UIFigure.Name = 'UI Figure';
+            app.UIFigure.Resize = 'off';
+
+            % Create GaussianBeam1e2radiusSliderLabel
+            app.GaussianBeam1e2radiusSliderLabel = uilabel(app.UIFigure);
+            app.GaussianBeam1e2radiusSliderLabel.HorizontalAlignment = 'center';
+            app.GaussianBeam1e2radiusSliderLabel.VerticalAlignment = 'center';
+            app.GaussianBeam1e2radiusSliderLabel.Position = [227 115 245 39];
+            app.GaussianBeam1e2radiusSliderLabel.Text = 'Gaussian Beam 1/e^2 radius ';
+
+            % Create GaussianBeam1e2radiusSlider
+            app.GaussianBeam1e2radiusSlider = uislider(app.UIFigure);
+            app.GaussianBeam1e2radiusSlider.Limits = [0 60];
+            app.GaussianBeam1e2radiusSlider.ValueChangedFcn = createCallbackFcn(app, @GaussianBeam1e2radiusSliderValueChanged, true);
+            app.GaussianBeam1e2radiusSlider.Position = [272 176 150 3];
+            app.GaussianBeam1e2radiusSlider.Value = 20;
+
+            % Create LensFocalLengthSliderLabel
+            app.LensFocalLengthSliderLabel = uilabel(app.UIFigure);
+            app.LensFocalLengthSliderLabel.HorizontalAlignment = 'right';
+            app.LensFocalLengthSliderLabel.Position = [514 127 104 15];
+            app.LensFocalLengthSliderLabel.Text = 'Lens Focal Length';
+
+            % Create LensFocalLengthSlider
+            app.LensFocalLengthSlider = uislider(app.UIFigure);
+            app.LensFocalLengthSlider.Limits = [200 2200];
+            app.LensFocalLengthSlider.ValueChangedFcn = createCallbackFcn(app, @LensFocalLengthSliderValueChanged, true);
+            app.LensFocalLengthSlider.Position = [490 176 150 3];
+            app.LensFocalLengthSlider.Value = 1000;
+
+            % Create LensPositionSliderLabel
+            app.LensPositionSliderLabel = uilabel(app.UIFigure);
+            app.LensPositionSliderLabel.HorizontalAlignment = 'right';
+            app.LensPositionSliderLabel.Position = [529 53 78 15];
+            app.LensPositionSliderLabel.Text = 'Lens Position';
+
+            % Create LensPositionSlider
+            app.LensPositionSlider = uislider(app.UIFigure);
+            app.LensPositionSlider.Limits = [0 5000];
+            app.LensPositionSlider.ValueChangedFcn = createCallbackFcn(app, @LensPositionSliderValueChanged, true);
+            app.LensPositionSlider.Position = [488 100 150 3];
+            app.LensPositionSlider.Value = 3000;
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.UIFigure);
+            title(app.UIAxes, 'Gaussian Beam Propagation')
+            xlabel(app.UIAxes, 'z')
+            ylabel(app.UIAxes, 'x')
+            app.UIAxes.Position = [26 203 645 240];
+
+            % Create GaussianBeamPositionSliderLabel
+            app.GaussianBeamPositionSliderLabel = uilabel(app.UIFigure);
+            app.GaussianBeamPositionSliderLabel.HorizontalAlignment = 'right';
+            app.GaussianBeamPositionSliderLabel.Position = [280 48 137 15];
+            app.GaussianBeamPositionSliderLabel.Text = 'Gaussian Beam Position';
+
+            % Create GaussianBeamPositionSlider
+            app.GaussianBeamPositionSlider = uislider(app.UIFigure);
+            app.GaussianBeamPositionSlider.Limits = [-100 100];
+            app.GaussianBeamPositionSlider.ValueChangedFcn = createCallbackFcn(app, @GaussianBeamPositionSliderValueChanged, true);
+            app.GaussianBeamPositionSlider.Position = [274 100 150 3];
+
+            % Create TextArea
+            app.TextArea = uitextarea(app.UIFigure);
+            app.TextArea.Editable = 'off';
+            app.TextArea.Position = [79 48 149 136];
+            app.TextArea.Value = {'The surface plot shows the intensity profile of a Gaussian beam, beginning at the beam waist, as it propagates through a lens. '; ''; 'All distances are in units of one wavelength. '};
+        end
+    end
+
+    methods (Access = public)
+
+        % Construct app
+        function app = GaussianBeamLensPropagator
+
+            % Create and configure components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            % Execute the startup function
+            runStartupFcn(app, @startupFcn)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end]]></w:t></w:r></w:p></w:body></w:document>

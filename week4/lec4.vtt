@@ -1,0 +1,537 @@
+WEBVTT
+
+1
+00:00:09.170 --> 00:00:14.530
+Now that we have an equation which relates the radii of
+
+2
+00:00:14.530 --> 00:00:21.465
+curvature and the index of refraction of a lens to the paraxial power or focal length,
+
+3
+00:00:21.465 --> 00:00:27.180
+we'd like the same thing for our other primary way of focusing light which are mirrors.
+
+4
+00:00:27.180 --> 00:00:32.210
+So let's derive the equivalent of the lens makers' equation for mirrors.
+
+5
+00:00:32.210 --> 00:00:35.595
+It turns out, there's a fairly easy way to do this.
+
+6
+00:00:35.595 --> 00:00:40.725
+If we imagine that we put an object at the radius of curvature,
+
+7
+00:00:40.725 --> 00:00:47.250
+such that rays launched from this object hit the mirror at normal incidence,
+
+8
+00:00:47.250 --> 00:00:52.825
+or equivalently since rays represent the normal to the face fronts,
+
+9
+00:00:52.825 --> 00:00:56.775
+we're launching a spherical face front, a spherical wave,
+
+10
+00:00:56.775 --> 00:00:59.580
+and that spherical wave would perfectly match
+
+11
+00:00:59.580 --> 00:01:03.450
+the curvature of the mirror once it got out of the mirror.
+
+12
+00:01:03.450 --> 00:01:06.375
+And of course that that turns around the ray or the wave front,
+
+13
+00:01:06.375 --> 00:01:10.755
+and heads right back to the original position,
+
+14
+00:01:10.755 --> 00:01:13.215
+the origin of the coordinate system.
+
+15
+00:01:13.215 --> 00:01:17.295
+Thus that particular condition is an imaging condition,
+
+16
+00:01:17.295 --> 00:01:22.500
+and we just write our thin lens equation for that imaging condition.
+
+17
+00:01:22.500 --> 00:01:26.185
+And then we'll know how to figure out what focal length is.
+
+18
+00:01:26.185 --> 00:01:30.125
+The only tricky bit here of course is the sun convention for mirrors.
+
+19
+00:01:30.125 --> 00:01:32.910
+So let's review that again.
+
+20
+00:01:32.910 --> 00:01:35.370
+This is not something you're going to use too often,
+
+21
+00:01:35.370 --> 00:01:38.310
+because it's often the case you simply unfold the system.
+
+22
+00:01:38.310 --> 00:01:41.220
+But you will have to use this in optics studio,
+
+23
+00:01:41.220 --> 00:01:43.190
+at least the negative distances,
+
+24
+00:01:43.190 --> 00:01:46.015
+and so it's worth one more review.
+
+25
+00:01:46.015 --> 00:01:48.390
+So first we have our mirror here,
+
+26
+00:01:48.390 --> 00:01:51.120
+the radius of curvature is negative because
+
+27
+00:01:51.120 --> 00:01:56.775
+the center of the radius of curvature is to the left of the vertex of the mirror.
+
+28
+00:01:56.775 --> 00:01:59.280
+The infinite light is coming from
+
+29
+00:01:59.280 --> 00:02:02.850
+an object here at the origin of the radius of curvature,
+
+30
+00:02:02.850 --> 00:02:04.790
+the origin of the sphere.
+
+31
+00:02:04.790 --> 00:02:08.190
+And because that point is to the left of the vertex,
+
+32
+00:02:08.190 --> 00:02:10.710
+the object distance T is negative.
+
+33
+00:02:10.710 --> 00:02:16.145
+And I've written therefore a minus T because I write positive quantities on my diagrams.
+
+34
+00:02:16.145 --> 00:02:18.480
+Of course the refractive index of air, or vacuum,
+
+35
+00:02:18.480 --> 00:02:22.650
+or whatever we're in, is index N. When we hit the mirror,
+
+36
+00:02:22.650 --> 00:02:27.175
+the image shows up back here over to the left of the vertex,
+
+37
+00:02:27.175 --> 00:02:30.180
+and therefore we have a minus T prime.
+
+38
+00:02:30.180 --> 00:02:33.460
+That's just the standard number line coordinate system.
+
+39
+00:02:33.460 --> 00:02:35.455
+But if we didn't do anything else,
+
+40
+00:02:35.455 --> 00:02:39.710
+that minus T prime wouldn't work in our thin lens equation because
+
+41
+00:02:39.710 --> 00:02:45.580
+our thin lens equation would normally want try to work for a lens for example and,
+
+42
+00:02:45.580 --> 00:02:49.665
+in that case, T prime would be positive for a real image.
+
+43
+00:02:49.665 --> 00:02:51.660
+And so the way we correct for that,
+
+44
+00:02:51.660 --> 00:02:54.075
+to make a thin lens equations work,
+
+45
+00:02:54.075 --> 00:02:59.110
+is the index of refraction after we hit the mirror is taken to be negative.
+
+46
+00:02:59.110 --> 00:03:01.755
+In optics studio, this is done for you automatically,
+
+47
+00:03:01.755 --> 00:03:03.515
+you don't have to worry about the index,
+
+48
+00:03:03.515 --> 00:03:05.610
+you only have to put in the negative distance.
+
+49
+00:03:05.610 --> 00:03:07.740
+And that will be obvious if you done it wrong
+
+50
+00:03:07.740 --> 00:03:11.480
+because you'll have rays on the wrong side of the mirror.
+
+51
+00:03:11.480 --> 00:03:13.695
+So let's take that condition,
+
+52
+00:03:13.695 --> 00:03:16.650
+and now put this into our thin lens equation.
+
+53
+00:03:16.650 --> 00:03:19.000
+N prime over T prime, minus N over T,
+
+54
+00:03:19.000 --> 00:03:23.175
+equals 1 over F. But N prime is minus N,
+
+55
+00:03:23.175 --> 00:03:27.240
+T prime is R, both negative quantities.
+
+56
+00:03:27.240 --> 00:03:32.095
+And this N and T here is again,
+
+57
+00:03:32.095 --> 00:03:34.523
+or again both negative quantities.
+
+58
+00:03:34.523 --> 00:03:39.660
+And by the way you'll notice that this is a positive quantity,
+
+59
+00:03:39.660 --> 00:03:42.120
+this is a positive quantity,
+
+60
+00:03:42.120 --> 00:03:45.630
+N over minus R. And this is a positive point.
+
+61
+00:03:45.630 --> 00:03:47.530
+So all the actual ratios here,
+
+62
+00:03:47.530 --> 00:03:49.940
+if you include this minus sign, are all positive.
+
+63
+00:03:49.940 --> 00:03:52.410
+And it is worth going through and convincing
+
+64
+00:03:52.410 --> 00:03:55.480
+yourself that you've got all those signs correct.
+
+65
+00:03:55.480 --> 00:03:57.990
+So given the sign convention now,
+
+66
+00:03:57.990 --> 00:04:00.750
+we can put these two quantities together because they're equal.
+
+67
+00:04:00.750 --> 00:04:02.715
+And we find that one over the focal length,
+
+68
+00:04:02.715 --> 00:04:04.485
+which is the power of the mirror,
+
+69
+00:04:04.485 --> 00:04:12.395
+is simply two N over minus R. Or the focal length is R over two.
+
+70
+00:04:12.395 --> 00:04:16.320
+And that's pretty simple, it's pretty obvious,
+
+71
+00:04:16.320 --> 00:04:19.725
+because what we have here is the one to one imaging condition,
+
+72
+00:04:19.725 --> 00:04:23.110
+we have two F to the optic.
+
+73
+00:04:23.110 --> 00:04:25.905
+Then another two F to the image.
+
+74
+00:04:25.905 --> 00:04:28.800
+And that's our simple one to one imaging condition.
+
+75
+00:04:28.800 --> 00:04:31.900
+So when you have an object at the center of the radius of curvature,
+
+76
+00:04:31.900 --> 00:04:34.015
+it re-images upside down,
+
+77
+00:04:34.015 --> 00:04:36.850
+negative magnification back to that same image.
+
+78
+00:04:36.850 --> 00:04:41.370
+Remember that the radius of curvature in this coordinate system is negative.
+
+79
+00:04:41.370 --> 00:04:43.560
+So the minus sign here tells us that overall,
+
+80
+00:04:43.560 --> 00:04:46.065
+we have a positive focal length mirror,
+
+81
+00:04:46.065 --> 00:04:49.380
+which is consistent with our sign convention that a ray coming in parallel to
+
+82
+00:04:49.380 --> 00:04:54.950
+the axis is bent down towards the axis upon reflection.
+
+83
+00:04:54.950 --> 00:04:57.445
+So you've seen this in the demo videos,
+
+84
+00:04:57.445 --> 00:04:59.610
+but let's just quickly remind ourselves,
+
+85
+00:04:59.610 --> 00:05:04.055
+if we sent rays into a lens with a positive radius of curvature,
+
+86
+00:05:04.055 --> 00:05:07.060
+its center of curvature is to the right to the element.
+
+87
+00:05:07.060 --> 00:05:10.690
+The rays would be deviated off the axis and we'd
+
+88
+00:05:10.690 --> 00:05:16.480
+see what is clearly a negative element with a virtual image.
+
+89
+00:05:16.480 --> 00:05:19.405
+Conversely, if we have a negative radius of curvature,
+
+90
+00:05:19.405 --> 00:05:22.990
+because the radius of curvature is to the left of the element,
+
+91
+00:05:22.990 --> 00:05:28.005
+then the rays that come in parallel are sent towards the axis.
+
+92
+00:05:28.005 --> 00:05:30.470
+They must of course converge to the focal point.
+
+93
+00:05:30.470 --> 00:05:34.060
+We know though that would be halfway between the mirror and
+
+94
+00:05:34.060 --> 00:05:37.759
+its center of curvature because the focal length is the radius over two.
+
+95
+00:05:37.759 --> 00:05:39.814
+But there's that important minus sign there,
+
+96
+00:05:39.814 --> 00:05:45.685
+that this negative radius of curvature corresponds to the positive focal length.
+
+97
+00:05:45.685 --> 00:05:50.955
+Let's put our elements together just as a practice.
+
+98
+00:05:50.955 --> 00:05:55.840
+There's a particular optical element called the Mangin mirror.
+
+99
+00:05:55.840 --> 00:05:58.150
+It's nothing more than a meniscus singlet,
+
+100
+00:05:58.150 --> 00:06:00.655
+where the back side,
+
+101
+00:06:00.655 --> 00:06:03.505
+the outer surface of the singlet has been mirrored.
+
+102
+00:06:03.505 --> 00:06:05.910
+I've shown that with a big mirror here but,
+
+103
+00:06:05.910 --> 00:06:09.575
+in reality, you just deposit some metal on the outside of the lens.
+
+104
+00:06:09.575 --> 00:06:12.925
+It turns out that this is a convenient real optic,
+
+105
+00:06:12.925 --> 00:06:18.505
+it's put into telescopes and it cancels a particular aberration colts or collaboration.
+
+106
+00:06:18.505 --> 00:06:20.480
+We'll learn about that later.
+
+107
+00:06:20.480 --> 00:06:26.805
+So let's just work through figuring out what the paraxial power of this system is.
+
+108
+00:06:26.805 --> 00:06:28.110
+Now we could unfold this,
+
+109
+00:06:28.110 --> 00:06:30.300
+remember that it's always a good place to start.
+
+110
+00:06:30.300 --> 00:06:37.650
+And if we did, we'd have three lenses or three optical elements in intimate contact.
+
+111
+00:06:37.650 --> 00:06:39.615
+We'd have the first meniscus,
+
+112
+00:06:39.615 --> 00:06:42.330
+then a mirror that has power,
+
+113
+00:06:42.330 --> 00:06:45.240
+and then of course we go backwards as the ray chunk here,
+
+114
+00:06:45.240 --> 00:06:47.450
+through the same meniscus again.
+
+115
+00:06:47.450 --> 00:06:50.310
+But if there are intimate contact, that's easy.
+
+116
+00:06:50.310 --> 00:06:52.845
+That just means the power of this total element
+
+117
+00:06:52.845 --> 00:06:56.150
+is the sum of the powers of the three elements.
+
+118
+00:06:56.150 --> 00:06:59.310
+We can drop in what those powers are,
+
+119
+00:06:59.310 --> 00:07:02.220
+here we have the curvature of that first surface,
+
+120
+00:07:02.220 --> 00:07:05.075
+times index minus one.
+
+121
+00:07:05.075 --> 00:07:07.890
+Then we don't accept the glass right?
+
+122
+00:07:07.890 --> 00:07:10.935
+So we don't really even see the second radius of curvature from the mirror,
+
+123
+00:07:10.935 --> 00:07:13.150
+because we stay inside the glass.
+
+124
+00:07:13.150 --> 00:07:14.375
+Then we hit the mirror.
+
+125
+00:07:14.375 --> 00:07:15.690
+So there is it's power,
+
+126
+00:07:15.690 --> 00:07:18.400
+two C, if the index was one.
+
+127
+00:07:18.400 --> 00:07:24.180
+And then we come back and hit the first surface again.
+
+128
+00:07:24.180 --> 00:07:29.115
+So there's the second exit or exiting the surface.
+
+129
+00:07:29.115 --> 00:07:34.180
+And work through this and make sure you understand all the sign conventions.
+
+130
+00:07:34.180 --> 00:07:37.440
+Of course the first and last term look a lot the same.
+
+131
+00:07:37.440 --> 00:07:43.920
+So what this appears to be is actually a surface here twice,
+
+132
+00:07:43.920 --> 00:07:47.665
+there's the two, plus the effect of the mirror.
+
+133
+00:07:47.665 --> 00:07:53.035
+So this is an example of how you apply what we've just learned to
+
+134
+00:07:53.035 --> 00:07:59.920
+construct the equivalent paraxial power of more complex elements.

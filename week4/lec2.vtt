@@ -1,0 +1,365 @@
+WEBVTT
+
+1
+00:00:04.560 --> 00:00:10.415
+All right, now let's begin to relax one of our approximations,
+
+2
+00:00:10.415 --> 00:00:14.300
+which is to say, let's relax the thin lens approximation.
+
+3
+00:00:14.300 --> 00:00:18.440
+Let's figure out what the power of an actual curved piece of
+
+4
+00:00:18.440 --> 00:00:23.315
+glass would be because that's what we want the design in the end is real-world optics.
+
+5
+00:00:23.315 --> 00:00:24.920
+So to do that, let's just take
+
+6
+00:00:24.920 --> 00:00:31.532
+a single-surface bounding indices n and n prime with a positive radius of curvature by
+
+7
+00:00:31.532 --> 00:00:35.900
+our coordinate system R. Let's first find the height of
+
+8
+00:00:35.900 --> 00:00:37.865
+this surface measured from
+
+9
+00:00:37.865 --> 00:00:40.580
+the radius of curvature and this is not obeying our sign convention,
+
+10
+00:00:40.580 --> 00:00:45.120
+just the distance from the rays of curvature to the surface.
+
+11
+00:00:45.120 --> 00:00:48.635
+Of course, the surface is a sphere so that's an easy thing to do.
+
+12
+00:00:48.635 --> 00:00:54.184
+Once again, we will make our paraxial approximation that is we're still paraxial,
+
+13
+00:00:54.184 --> 00:00:56.330
+just not flat surfaces anymore,
+
+14
+00:00:56.330 --> 00:00:59.150
+and take only the first and second terms
+
+15
+00:00:59.150 --> 00:01:02.260
+or the lowest in quadratic terms of the square root.
+
+16
+00:01:02.260 --> 00:01:06.720
+So that gives us a parabolic approximation of your spherical surface.
+
+17
+00:01:06.720 --> 00:01:13.240
+Now, let's calculate the optical path length through this not-flat surface.
+
+18
+00:01:13.240 --> 00:01:18.320
+And by optical path length theorem we just mean projection and integration along Z axis,
+
+19
+00:01:18.320 --> 00:01:22.870
+so we are just going to calculate nL along the Z axis,
+
+20
+00:01:22.870 --> 00:01:24.880
+and some distance off of the axis,
+
+21
+00:01:24.880 --> 00:01:27.175
+perhaps on this line here for
+
+22
+00:01:27.175 --> 00:01:31.955
+a total thickness of some arbitrary constant d measured from the origin.
+
+23
+00:01:31.955 --> 00:01:34.435
+So we have nL,
+
+24
+00:01:34.435 --> 00:01:35.588
+the distance in air,
+
+25
+00:01:35.588 --> 00:01:38.155
+and then n prime L prime,
+
+26
+00:01:38.155 --> 00:01:39.865
+the distance in the glass.
+
+27
+00:01:39.865 --> 00:01:41.635
+Because we have this expression,
+
+28
+00:01:41.635 --> 00:01:44.245
+we know what L and L prime are,
+
+29
+00:01:44.245 --> 00:01:47.290
+they're that various pieces of that parabola.
+
+30
+00:01:47.290 --> 00:01:49.880
+We can factor out the terms there,
+
+31
+00:01:49.880 --> 00:01:52.750
+we get a term that's a constant and constants
+
+32
+00:01:52.750 --> 00:01:55.835
+don't matter because they don't transform the shape of the wave front.
+
+33
+00:01:55.835 --> 00:01:58.585
+But the one that's left is very interesting.
+
+34
+00:01:58.585 --> 00:01:59.900
+Notice that we've, once again,
+
+35
+00:01:59.900 --> 00:02:02.255
+found an optical path length and it's quadratic,
+
+36
+00:02:02.255 --> 00:02:03.875
+it depends on R squared.
+
+37
+00:02:03.875 --> 00:02:07.610
+Since we already have an expression for the optical path length from
+
+38
+00:02:07.610 --> 00:02:11.255
+a few slides ago and it's R squared over 2f,
+
+39
+00:02:11.255 --> 00:02:13.849
+we can now set this quantity equal to one over 2f,
+
+40
+00:02:13.849 --> 00:02:15.840
+there's one over two there,
+
+41
+00:02:15.840 --> 00:02:18.580
+we find a really important expression.
+
+42
+00:02:18.580 --> 00:02:21.220
+The power of the lens, one of the focal length,
+
+43
+00:02:21.220 --> 00:02:26.315
+is one over the radius of curvature times the difference in the indices.
+
+44
+00:02:26.315 --> 00:02:30.800
+Again, it's just convenient to have the variable and the upside-down variables,
+
+45
+00:02:30.800 --> 00:02:33.565
+let's define one over R as the curvature,
+
+46
+00:02:33.565 --> 00:02:35.640
+that's in units of inverse meters.
+
+47
+00:02:35.640 --> 00:02:38.230
+So the power of a surface is related to
+
+48
+00:02:38.230 --> 00:02:40.240
+the curvature times the difference of
+
+49
+00:02:40.240 --> 00:02:43.470
+the indices or a fraction of the two surfaces that bounce.
+
+50
+00:02:43.470 --> 00:02:46.375
+That's the beginning of what will allow us to design
+
+51
+00:02:46.375 --> 00:02:52.150
+real optics from our thin paraxial first order designs.
+
+52
+00:02:52.150 --> 00:02:55.380
+Now, I mentioned that Fermat's principle was
+
+53
+00:02:55.380 --> 00:02:59.052
+the sophisticated way to design the power of the lens.
+
+54
+00:02:59.052 --> 00:03:04.745
+Perhaps, more fundamental, less-sophisticated way is use Snell's law.
+
+55
+00:03:04.745 --> 00:03:07.775
+So, let's stop for a minute and do that,
+
+56
+00:03:07.775 --> 00:03:11.040
+it's slightly painful and you'll understand from this why you like
+
+57
+00:03:11.040 --> 00:03:15.645
+Optic Studio to do lots of calculations for you just to confirm you get the same answer.
+
+58
+00:03:15.645 --> 00:03:17.790
+And then we begin to get us coordinate systems and
+
+59
+00:03:17.790 --> 00:03:23.250
+useful insight when we do a little more sophisticated ray tracing by hand.
+
+60
+00:03:23.250 --> 00:03:25.260
+So, here's that same surface with
+
+61
+00:03:25.260 --> 00:03:29.200
+positive radius of curvature bounding materials n and n prime.
+
+62
+00:03:29.200 --> 00:03:37.300
+I'm going to shoot it right off the axis with angle u that turns into array of u prime.
+
+63
+00:03:37.300 --> 00:03:40.200
+I'm going to have to draw a normal to the surface up here and
+
+64
+00:03:40.200 --> 00:03:43.075
+define rays i and i prime, our angles,
+
+65
+00:03:43.075 --> 00:03:46.770
+i and i prime, that are my typical Snell's law angles of
+
+66
+00:03:46.770 --> 00:03:51.010
+incidence and let's say I hit the lens at some height y.
+
+67
+00:03:51.010 --> 00:03:53.305
+That's enough for me to solve the problem.
+
+68
+00:03:53.305 --> 00:03:56.695
+So, here in the paraxial version of Snell's law
+
+69
+00:03:56.695 --> 00:04:00.435
+where i and i prime have replaced sine i and sine i prime,
+
+70
+00:04:00.435 --> 00:04:04.890
+I can go figure out what I is relative to u. Alpha is
+
+71
+00:04:04.890 --> 00:04:09.610
+the angle that the normal to the surface makes with the optical axis.
+
+72
+00:04:09.610 --> 00:04:14.675
+So I can replace i with more fundamental variables that relate to my ray.
+
+73
+00:04:14.675 --> 00:04:19.440
+And then I can go use some geometry or similar triangles to figure out that u is
+
+74
+00:04:19.440 --> 00:04:24.870
+y over t and alpha is y over R and so we can make those replacements,
+
+75
+00:04:24.870 --> 00:04:26.870
+many things cancel out.
+
+76
+00:04:26.870 --> 00:04:28.577
+And when I cancel y,
+
+77
+00:04:28.577 --> 00:04:31.920
+I should be able to cancel y because in the paraxial limit,
+
+78
+00:04:31.920 --> 00:04:35.045
+it should not matter what my ray height is,
+
+79
+00:04:35.045 --> 00:04:37.033
+that's what it means to be paraxial.
+
+80
+00:04:37.033 --> 00:04:38.310
+And look at that, I get
+
+81
+00:04:38.310 --> 00:04:41.250
+exactly the same Gaussian lens equation that pops out
+
+82
+00:04:41.250 --> 00:04:44.329
+again and the same power for the surface,
+
+83
+00:04:44.329 --> 00:04:47.300
+one over the radius times the difference in their refractive indices.
+
+84
+00:04:47.300 --> 00:04:50.017
+So, this is not the sophisticated way to go at it,
+
+85
+00:04:50.017 --> 00:04:53.700
+I think Fermat's principle is much simpler but it confirms that
+
+86
+00:04:53.700 --> 00:04:58.940
+Fermat's principle agrees with Snell's law, which is nice.
+
+87
+00:04:58.940 --> 00:05:06.430
+So, that's our first step in transforming thin lenses into curved pieces of glass.
+
+88
+00:05:06.430 --> 00:05:09.220
+The thing that connects those is the concept of
+
+89
+00:05:09.220 --> 00:05:12.180
+the optical path length and from that, we can derive,
+
+90
+00:05:12.180 --> 00:05:14.880
+then, how the optical path length of
+
+91
+00:05:14.880 --> 00:05:19.210
+a curved surface relates to the Gaussian thin lens equation.
