@@ -157,23 +157,60 @@ disp(z_R_new);
 % What is the location of the beam waist relative to the 1.6 mm measurement point? 
 % Express your answer as a positive distance in units of meters with two significant figures.
 
-
 % Given parameters
 w1 = 1.6e-3; % Beam radius at the first measurement point in meters
 w2 = 3.0e-3; % Beam radius at the second measurement point in meters
-lambda = 532e-9; % Wavelength in meters
 d = 1.0; % Distance between the measurement points in meters
-syms z1 zR;
-z2 = z1 + d;
-a =w1*w1/w2*w2;
-eqn = z1^2 + zR^2 == a*(z2^2 + zR^2);
-z1_sol = solve(eqn, z1);
+lambda = 532e-9; % Wavelength in meters
 
-% Calculate the beam waist radius using the two measurement points
-w0 = sqrt((w2^2 - w1^2) * (d * lambda) / (w1^2 + w2^2));
+% Declare symbolic variables
+syms w0 z1 zR;
 
-% Calculate the location of the beam waist relative to the first measurement point
-z = (pi * w1^2 * w0^2) / (lambda * (w2^2 - w1^2));
+% Far-Field beam radius equation
+w_z = w0 * (z1/zR);
+
+% Express z2 in terms of z1 using the given w1 and w2
+z2_expr = z1 * (w2/w1);
+
+% Set up equations for z1 and z2 using the far-field condition
+eqn1 = w_z == w1;
+eqn2 = w0 * (z2_expr/zR) == w2;
+eqn3 = z2_expr - z1 == d;
+
+% Substitute z2_expr into eqn3
+eqn3_sub = subs(eqn3, z2_expr, z1 * (w2/w1));
+
+% Solve the system of equations
+solution = solve([eqn1, eqn2, eqn3_sub], [w0, z1, zR]);
+
+% Print the result
+fprintf('The location of the beam waist relative to the 1.6 mm measurement point is %.2f meters.\n', double(solution.z1));
+%% 2.Find the size of the beam waist, w0, and express your answer in units of micrometers with two significant figures.
+% Calculate the Rayleigh range, zR.
+% Discuss how these values impact the solution method you can use for this problem.
+
+
+
+% Find the size of the beam waist, w0, and express your answer in units of micrometers with two significant figures.
+
+% Given parameters
+w1 =  1.6e-3; % Beam radius at the measurement point in meters
+lambda = 532e-9; % Wavelength in meters
+z1 =1.14; % Distance to the measurement point in meters
+
+% Calculate w0 using z1, lambda and w1
+w0 = z1 * lambda / (pi * w1);
 
 % Display the result
-fprintf('The location of the beam waist relative to the first measurement point is %.2f meters.\n', z);
+fprintf('The size of the beam waist (w0) is %.2f micrometers.\n', w0 * 1e6);  % Convert from meters to micrometers
+
+
+
+
+
+
+
+
+
+
+
